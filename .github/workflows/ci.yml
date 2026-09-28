@@ -9,9 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # TODO 1: configurar Python 3.12 con actions/setup-python@v5
-      # TODO 2: instalar dependencias (pip install -r requirements.txt)
-      # TODO 3: ejecutar pytest con cobertura sobre src y fallar si es menor al 80 %
-      #         (pista: --cov=src --cov-fail-under=80)
-      - name: Marcador temporal
-        run: echo "Complete los pasos indicados"
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Puerta de calidad: el job falla si alguna prueba falla
+      # o si la cobertura de src/ es menor al 80 %.
+      - name: Pruebas con cobertura mínima del 80 %
+        run: pytest --cov=src --cov-report=term-missing --cov-fail-under=80
