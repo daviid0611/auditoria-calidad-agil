@@ -1,0 +1,17 @@
+name: CI de calidad
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # TODO 1: configurar Python 3.12 con actions/setup-python@v5
+      # TODO 2: instalar dependencias (pip install -r requirements.txt)
+      # TODO 3: ejecutar pytest con cobertura sobre src y fallar si es menor al 80 %
+      #         (pista: --cov=src --cov-fail-under=80)
+      - name: Marcador temporal
+        run: echo "Complete los pasos indicados"
