@@ -1,16 +1,22 @@
 # Tablero del equipo (GitHub Projects)
 
-Guía para montar a mano el tablero que respalda `docs/politicas_kanban.md`. Equipo: David y Samuel Ossa Escobar.
+Tablero que respalda `docs/politicas_kanban.md`. Equipo: David y Samuel Ossa Escobar.
 
-## 1. Crear el proyecto
+- Enlace público: https://github.com/users/daviid0611/projects/4 (vista "Tablero Kanban").
+- Captura:
 
-1. En GitHub: perfil > **Projects** > **New project** > plantilla **Board**. Nombre: `Auditoría de calidad: app de citas`.
-2. En el proyecto: **...** > **Settings** > enlazar el repositorio `auditoria-calidad-agil`.
-3. Crear un campo personalizado **Atributo ISO 25010** (tipo *Single select*) con las opciones: Adecuación funcional, Capacidad de interacción, Fiabilidad, Seguridad, Mantenibilidad, Flexibilidad, Seguridad operacional (safety).
+![Tablero Kanban en GitHub Projects](tablero.png)
+
+## 1. Proyecto
+
+1. Proyecto `Auditoría de calidad: app de citas` en la cuenta `daviid0611`, público y enlazado al repositorio `auditoria-calidad-agil`. Vista **Tablero Kanban** con diseño *Board*.
+2. Campo personalizado **Atributo ISO 25010** (tipo *Single select*) con las opciones: Adecuación funcional, Capacidad de interacción, Fiabilidad, Seguridad, Mantenibilidad, Flexibilidad, Seguridad operacional (safety).
+3. Campo personalizado **Responsable** (*Single select*): David, Samuel, David y Samuel, Sin asignar. Se usa en lugar de *Assignees* porque las tarjetas son borradores (*draft*) y Samuel aún no es colaborador del repositorio.
+4. Se creó con la CLI de GitHub (`gh project create`, `gh project field-create`, `gh project item-create`, `gh project item-edit`), así que se puede reconstruir igual.
 
 ## 2. Columnas y límites WIP
 
-Las columnas salen del campo **Status**. Renombre las opciones que trae la plantilla y agregue las que faltan, en este orden:
+Las columnas salen del campo **Status**. Sus opciones, en orden, son las columnas; la descripción de cada opción (visible bajo el título de la columna) resume su límite WIP y su política de salida:
 
 | Orden | Columna (opción de Status) | Límite WIP |
 |---|---|---|
@@ -26,7 +32,7 @@ GitHub Projects solo **muestra** el límite: resalta la columna cuando se pasa, 
 
 ## 3. Tarjetas iniciales
 
-Cree cada tarjeta con **+ Add item** en la columna indicada. Escriba los criterios de aceptación en la descripción y diligencie el campo "Atributo ISO 25010".
+Cada tarjeta tiene en su descripción el criterio de aceptación y el atributo, y los campos "Atributo ISO 25010" y "Responsable" diligenciados. Para agregar una nueva: **+ Add item** en la columna.
 
 ### Tarjetas del taller
 
@@ -55,6 +61,5 @@ Conteo para la captura: Por hacer 2 de 4, En desarrollo 2 de 2, En revisión / p
 
 ## 4. Captura
 
-1. Tome una captura del tablero con las 5 columnas visibles y los contadores de límite.
-2. Pegue el enlace del proyecto (o la ruta de la captura) en la línea "Enlace o captura del tablero" de `docs/politicas_kanban.md`.
-3. Si el proyecto es privado, cambie su visibilidad a **Public** en **Settings** para que el docente pueda abrir el enlace.
+- `docs/tablero.png` se tomó del enlace público sin sesión iniciada (Edge a 1920 px de ancho), así que muestra lo mismo que ve el docente al abrir el enlace.
+- Al mover tarjetas, vuelva a tomar la captura desde el mismo enlace y reemplace el archivo.

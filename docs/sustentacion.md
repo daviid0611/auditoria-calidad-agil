@@ -5,11 +5,11 @@ Repositorio: https://github.com/daviid0611/auditoria-calidad-agil
 
 ## 1. Guion
 
-Ritmo de referencia: unas 75 palabras cada 30 segundos. Ensayen con cronómetro. Si se pasan, recorten los ejemplos entre paréntesis.
+Ritmo de referencia: unas 75 palabras cada 30 segundos. El guion tiene 432 palabras, unos 2 min 53 s a 150 palabras por minuto, lo que deja unos 7 s para cambiar de pantalla. Ensayen con cronómetro. Si se pasan, recorten el ejemplo entre paréntesis de la cadena 1.
 
 ### 0:00 a 0:30. Diagnóstico (David)
 
-> La startup entrega una app de citas médicas cada dos semanas, con defectos en producción, pruebas manuales y despliegues los viernes. Con ISO/IEC 25010, versión 2023, convertimos cada síntoma en un atributo medible. Los defectos afectan la fiabilidad, en ausencia de fallos. Las pruebas manuales, la mantenibilidad, en capacidad de ser probado. Los despliegues del viernes, la flexibilidad, en instalabilidad. Y agregamos uno del dominio médico, seguridad operacional: si la app no advierte un síntoma de alarma, puede retrasar una urgencia.
+> La startup entrega una app de citas médicas cada dos semanas, con defectos en producción, pruebas manuales y despliegues los viernes. Con ISO/IEC 25010:2023 convertimos cada síntoma en un atributo: defectos, fiabilidad en ausencia de fallos; pruebas manuales, mantenibilidad en capacidad de ser probado; despliegues del viernes, flexibilidad en instalabilidad. Y uno del dominio médico, seguridad operacional: si la app no advierte un síntoma de alarma, retrasa una urgencia.
 
 Pantalla: `docs/atributos_iso25010.md`.
 
@@ -29,19 +29,19 @@ Pantalla: pestaña Actions con la [ejecución en rojo](https://github.com/daviid
 
 **Cadena 3. Scrum (Samuel, 1:30 a 2:00)**
 
-> Problema: se daba por terminado código que después fallaba en producción. Práctica de Scrum: una Definition of Done de seis criterios que se responden con sí o no, cada uno ligado a un atributo. Cuatro los verifica la máquina en cada push: pruebas por criterio de aceptación, casos inválidos con ValueError, cobertura y CI en verde. Los otros dos son la revisión del compañero y que no haya secretos ni datos reales de pacientes. Si uno dice "no", la tarjeta no pasa a Hecho.
+> Problema: se daba por terminado código que fallaba en producción. Práctica de Scrum: una Definition of Done de seis criterios de sí o no, cada uno ligado a un atributo. Cuatro los verifica el CI en cada push: pruebas por criterio de aceptación, casos inválidos, cobertura y CI en verde. Los otros dos: revisión del compañero y cero secretos o datos reales de pacientes. Si uno dice "no", la tarjeta no pasa a Hecho.
 
 Pantalla: `docs/DoD.md`.
 
 **Cadena 4. Kanban (Samuel, 2:00 a 2:30)**
 
-> Problema: despliegues los viernes. Práctica de Kanban: un tablero en GitHub Projects con límites WIP para dos personas, 2 en desarrollo y 1 en revisión, y políticas encadenadas: la salida de una columna es la entrada de la siguiente. La política clave es que de "Listo para desplegar" solo se sale de lunes a jueves, antes de la una de la tarde. Así, si algo falla, la recuperación promedio de 4,5 horas termina dentro de la jornada. Métrica: despliegues de viernes a domingo, con meta cero.
+> Problema: despliegues los viernes. Práctica de Kanban: un tablero en GitHub Projects con límites WIP para dos personas, 2 en desarrollo y 1 en revisión, y políticas encadenadas: la salida de una columna es la entrada de la siguiente. La clave: solo se despliega de lunes a jueves antes de la una. Si algo falla, la recuperación promedio de 4,5 horas termina dentro de la jornada. Métrica: despliegues de viernes a domingo, meta cero.
 
-Pantalla: captura del tablero y `docs/politicas_kanban.md`.
+Pantalla: el tablero en https://github.com/users/daviid0611/projects/4 (o `docs/tablero.png`) y `docs/politicas_kanban.md`.
 
 ### 2:30 a 3:00. Resultados DORA y metas (Samuel)
 
-> Con los datos de 28 días: 5 despliegues por semana, lead time mediano de 20 horas, 20 % de fallos y 4,5 horas de recuperación. El hallazgo: los 4 fallos fueron en viernes o sábado; de lunes a jueves, cero de trece. Metas: fallos en 10 % o menos, cero despliegues de viernes a domingo y recuperación de 4 horas o menos. Aceptamos que el lead time suba, sin pasar de 48 horas. Todo se reproduce con el script y la hoja de cálculo del repositorio.
+> En 28 días: 5 despliegues por semana, lead time mediano de 20 horas, 20 % de fallos y 4,5 horas de recuperación. El hallazgo: los 4 fallos fueron en viernes o sábado; de lunes a jueves, cero de trece. Metas: fallos en 10 % o menos, cero despliegues de viernes a domingo y recuperación en 4 horas o menos. Aceptamos que el lead time suba hasta 48 horas. Todo se reproduce con el script del repositorio.
 
 Pantalla: `datos/metricas_dora.xlsx`, hoja `por_dia`.
 

@@ -1,12 +1,12 @@
 # Tablero Kanban: políticas por columna
 
-Enlace o captura del tablero: _______
+Enlace o captura del tablero: https://github.com/users/daviid0611/projects/4 (captura: [`docs/tablero.png`](tablero.png))
 
 Equipo: 2 personas (David y Samuel Ossa Escobar). Tablero en GitHub Projects (ver `docs/tablero.md`).
 
 | Columna | Límite WIP | Política de entrada | Política de salida | Evidencia |
 |---|---|---|---|---|
-| Por hacer | 4 | La tarjeta tiene historia de usuario, criterios de aceptación verificables (Dado / Cuando / Entonces) y el campo "Atributo ISO 25010" diligenciado. | La tarjeta tiene responsable asignado y ese responsable no tiene otra tarjeta en "En desarrollo". | Campos de la tarjeta en GitHub Projects (Assignees, Atributo ISO 25010). |
+| Por hacer | 4 | La tarjeta tiene historia de usuario, criterios de aceptación verificables (Dado / Cuando / Entonces) y el campo "Atributo ISO 25010" diligenciado. | La tarjeta tiene responsable asignado y ese responsable no tiene otra tarjeta en "En desarrollo". | Campos de la tarjeta en GitHub Projects (Responsable, Atributo ISO 25010). |
 | En desarrollo | 2 | = salida de "Por hacer": responsable asignado sin otra tarjeta en desarrollo. | Las pruebas se escribieron primero (commit `test:` anterior al commit `feat:`), `pytest --cov=src --cov-fail-under=80` pasa en local y hay un PR abierto enlazado a la tarjeta. | Historial de commits (`git log --oneline`) y PR enlazado. |
 | En revisión / pruebas | 1 | = salida de "En desarrollo": PR abierto y enlazado, con el workflow ejecutándose. | Workflow en verde, PR aprobado por el otro integrante, los 6 criterios de la DoD marcados en el PR y PR fusionado en `main`. | Check verde en Actions, aprobación del PR y lista de chequeo de la DoD. |
 | Listo para desplegar | 2 | = salida de "En revisión / pruebas": cambio fusionado en `main` con la DoD completa. | **Política anti-viernes:** se despliega solo de lunes a jueves y antes de las 13:00. El despliegue queda registrado (fecha de commit, fecha de despliegue, resultado) y se conoce la versión anterior para revertir. | Registro en `datos/despliegues.csv`. `scripts/dora.py` muestra los despliegues por día de la semana: debe haber 0 en viernes, sábado o domingo. |
